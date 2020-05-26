@@ -1,0 +1,133 @@
+/***************************** Content partie2************************/
+.StyleImage1{
+  padding-top: 90px;
+  width: 200px;
+  height: 200px;
+  float: left;
+  padding-left: 90px;
+
+}
+
+.StyleImage2{
+  padding-top: 90px;
+  width: 200px;
+  height: 200px;
+  float: left;
+  padding-left: 199px;
+
+}
+
+.StyleImage3{
+
+  padding-top: 30px;
+  width: 200px;
+  height: 200px;
+  float: left;
+  padding-left: 180px;
+}
+
+ul li{
+  display: inline-block;
+}
+
+.styleHeader1{
+  padding-top: 300px;
+    padding-left: 95px;
+}
+
+.styleParg1{
+  padding-left: 95px;
+}
+
+.styleHeader2{
+  padding-top: 300px;
+  padding-left: 190px;
+}
+
+.styleParg2{
+
+  padding-left: 190px;
+}
+
+.styleHeader3{
+  padding-top: 200px;
+  padding-left: 180px;
+}
+
+.styleParg3{
+  padding-left: 180px;
+}
+
+/*************************************************content partie3*******************************/
+
+.container2{
+  padding-top: 100px;
+}
+
+.styleImage4{
+  padding-left: 90px;
+  width: 400px;
+  height: 500px;
+  float: left;
+}
+
+.border2{
+  display: inline-block;
+}
+
+.Explication{
+  float: left;
+  padding-left: 80px;
+
+}
+.styleExp1{
+  text-align: center;
+}
+
+.styleLogo{
+  padding-top: 40px;
+  width:50px;
+  height: 50px;
+  transition-duration: 10s;
+  transition-property: transform;
+  transform: rotate(10deg);
+}
+
+.styleLogo:hover {
+  transform: rotateY(360deg);
+}
+
+.styleExp{
+ font-size: 20px;
+}
+
+.liste2, .listeContent2{
+
+  padding-left: 100px;
+}
+
+.liste3, .listeContent3{
+
+  padding-left: 100px;
+}
+
+
+/***************************contenet partie 4******************************/
+
+.container4{
+  padding-top: 800px;
+
+}
+.border4{
+  padding-left: 400px;
+}
+#cercle{
+
+  background:#f7f7f8;
+  border-radius:50%;
+  width:500px;
+  height:500px;
+  border:2px dashed #3587d4;
+}
+
+
