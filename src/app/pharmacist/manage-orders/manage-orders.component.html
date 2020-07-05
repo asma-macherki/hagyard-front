@@ -1,0 +1,141 @@
+<div  style="transition: opacity 500ms ease-in-out 0s; opacity: 1;">
+
+  <div  style="min-height: calc(100vh - 306px); padding-top: 38px;
+  padding-left: 5%;
+  padding-right: 6%;">
+
+  <a href="#" class="btn-block">
+    <i aria-hidden="true" class="fa fa-arrow-left"></i>
+    Dashbored
+  </a>
+  <h3>List of Orders</h3>
+  <br>
+
+
+  <div _ngcontent-c11="" class="row">
+
+
+    <div  class="col-md-10">
+        <div  class="row">
+
+                <div  class="form-group">
+                    <label  for="exampleSelect1">Search By </label>
+                    <select #searchSelect style="width:200px"class="form-control form-control-sm ng-pristine ng-valid ng-touched"
+                    (change)="change($event.target.value)">
+                      <option value="0">Search by</option>
+                      <option  value="1">Order #</option>
+                      <option  value="2">Order Status</option>
+                      <option  value="3">Pet Owner</option>
+                      <option  value="4">Patient Name</option>
+                      <option  value="5">Vet Name</option>
+                      <option  value="6">Vet Email</option>
+                      <option  value="7">Order Date</option>
+
+                    </select>
+                </div>
+                <div  class="form-group" style="padding-left: 30px;">
+                  <label [hidden]="display" for="exampleSelect1">Search </label>
+                  <input [hidden]="display" placeholder={{newPlacehold}} #searchInput style="width:200px" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" id="searchInput" type="text" >
+                  <label [hidden]="!display" for="exampleSelect1">Select Status </label>
+                    <select [hidden]="!display"  #searchInput style="width:200px" class="form-control form-control-sm ng-valid ng-touched ng-dirty" id="select">
+                        <option  selected="" value="-1"> All Status</option>
+                        <option  value="0">New Order </option>
+                        <option  value="3">In Process </option>
+                        <option  value="8">Order Filled</option>
+                        <option  value="1">Shipped </option>
+                        <option  value="9">Pharmacy Incomplete</option>
+                        <option  value="10">Pharmacy Canceled</option>
+                        <option  value="11">Vet Canceled</option>
+                        <option  value="12">Pick Up</option>
+                        <option  value="13">Local Delivery</option>
+                        <option  value="14">Doctor Delivery</option>
+                        <option  value="15">Awaiting Payment At Pharmacy</option>
+                     </select>
+
+                </div>
+
+                <div class="col-md-5">
+                  <div  class="form-group">
+                      <label ></label>
+                      <div  class="row">
+                          <div  class="col-lg-4 mt-md-1 mt-lg-2">
+                              <button  class="btn btn-sm btn-success btn-block text-center" id="searchbtn" type="button" style="width:140px" >
+                                <i aria-hidden="true" class="fa fa-search"></i>
+                                  Find
+                              </button>
+                          </div>
+
+                          <div style="padding-left: 50px;" class="col-lg-4 mt-md-1 mt-lg-2">
+                              <button (click)="exit()" class="btn btn-sm btn-default btn-block text-center" style="background-color: lightgray;width:140px" type="button">
+                                <i  aria-hidden="true" class="fa fa-ban" ></i>
+                                  Cancel</button>
+
+                          </div>
+                          <div style="padding-left: 85px;" class="col-lg-4 mt-md-1 mt-lg-2">
+                              <button  routerLink="" class="btn btn-sm btn-info btn-block text-center" type="button" style="background-color:#4056A1;width:140px">
+                                <i aria-hidden="true" class="fa fa-plus-square"></i>
+                                  PDF
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+        </div>
+    </div>
+
+    <div class="table-responsive" style="width:1200px">
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Order</th>
+            <th>Status</th>
+            <th>Pet Owner Name</th>
+            <th>Patient Name</th>
+            <th>Vet Name</th>
+            <th>Vet Email</th>
+            <th>Order Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+
+                <div class="pretty p-icon p-round p-jelly">
+                    <input  name="print" type="checkbox" class="ng-untouched ng-pristine ng-valid">
+                    <div  class="state p-primary">
+                        <i  class="icon mdi mdi-check"></i>
+                        <label ></label>
+                    </div>
+                </div>
+            </td>
+            <td >
+                250
+            </td>
+           <td >Awaiting Payment At Pharmacy</td>
+            <td >19  DEc Client 19  DEc Client</td>
+            <td >19  Patient</td>
+            <td >ken ford</td>
+            <td >ken@hagyard.com1</td>
+
+            <td  style="width: 15%;">05-29-2020 4:01 pm</td>
+            <td >
+            <div  class="d-flex flex-wrap" style="width: 120%; ">
+                  <button  routerLink="/orderDetails"class="btn btn-sm btn-info btn-sm m-1" style="width: 120%;font-size: 15px;" href="/pharmacy/orders/250"class="bntedit">
+                    View
+                  </button>
+                    <label></label>
+                    <button class="btn btn-sm btn-info btn-block text-center  " style="width: 120%;font-size: 15px;color: #123C69;"class="bntedit">
+                    <i  aria-hidden="true" class="fa fa-file-pdf-o" style="    margin-left: -18%;"></i> PDF</button>
+                </div>
+            </td>
+
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+</div>
+</div>
+</div>

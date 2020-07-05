@@ -1,5 +1,49 @@
-<app-nav-bar></app-nav-bar>
 
-<app-footer></app-footer>
+<div class="appContent">
+
+  <div class="sidnavContent" [ngClass]="{'show' : show}" >
+      <app-sid-nav></app-sid-nav>
+  </div>
+
+  <div class="mainContent" [ngClass]="{'sideNavOpen' : show}">
+      <div class="topNavContent">
+        <span >
+         <!-- <img  src="https://i.ya-webdesign.com/images/hamburger-menu-icon-png-white-12.png" (click)="changeStatus()" class="sideNavControl"  >-->
+        </span>
+        <app-topnav></app-topnav>
+      </div>
+
+      <div class="pageContent">
+
+
+        <main  class="content">
+          <router-outlet></router-outlet>
+
+        </main>
+        <notifier-container></notifier-container>
+
+      </div>
+
+      <div class="footerContent">
+          <app-footer-pharmacist></app-footer-pharmacist>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

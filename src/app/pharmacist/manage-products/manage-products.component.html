@@ -1,0 +1,132 @@
+
+<!--
+<div class="manageUsersContent">
+
+  <a href="#" class="btn-block">
+    <i aria-hidden="true" class="fa fa-arrow-left"></i>
+    Dashbored
+  </a>
+  <h3>Manage Products</h3>
+
+<br>
+
+  <div class=" pull-right">
+    <a routerLink="/pharmacits/addProduct">
+    <button class="btn btn-sm btn-info btn-block"id="addbtn1">
+      <i aria-hidden="true" class="fa fa-plus-square"></i>
+      Add Product
+    </button>
+  </a>
+  </div>
+
+
+  <div class="row">
+
+    <div  class="form-group">
+      <label>Filter By</label>
+
+      <select class="form-control form-control-sm ng-untouched ng-pristine ng-valid" >
+
+        <option value=0 selected>Search by</option>
+          <option value=1>Product Name</option>
+          <option value=2> Trade Name</option>
+      </select>
+    </div>
+
+
+    <div class="form-group">
+      <label id="labelsearch">Search</label>
+      <input class="form-control form-control-sm ng-untouched ng-pristine ng-valid"id="searchInput"
+      name="search"  [(ngModel)]="search"  type="text" placeholder={{newPlaceHolder}}>
+    </div>
+
+    <div class="col-md-2 align-self-center mt-2">
+      <button class="btn btn-sm btn-success m-1" id="searchbtn" type="button">
+        <i aria-hidden="true" class="fa fa-search"></i>
+        Find
+      </button>
+    </div >
+
+    <div  class="col-md-2 align-self-center mt-2">
+      <button  class="btn btn-sm btn-default btn-lg m-1" id="cancelbtn" style="background-color: lightgray;">
+        <i  aria-hidden="true" class="fa fa-ban" ></i>
+        Cancel
+      </button>
+    </div>
+
+
+
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+
+            <th>Product Name</th>
+            <th>Trade Name</th>
+            <th></th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let products of product">
+
+
+            <td>{{products.drugName}}</td>
+            <td>{{products.drugTradeName}}</td>
+
+              <img src="assets/images/down-arrow.png" (click)="open(products.id)"[hidden]="!show" >
+              <div table="elementPrescription" style="padding-top: 30px;padding-left: 100px;margin-top: 30px;"[hidden]="show">
+                        <table class="table2">
+                          <thead>
+                            <tr>
+                              <th>Type</th>
+                              <th>Form</th>
+                              <th>Strength</th>
+                              <th>Size</th>
+                              <th>Price</th>
+                              <th>Actions</th>
+                              <th>
+                                <button type="button" class="close" aria-label="Close" (click)="close()">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let elements of prescriptions">
+
+                              <td>{{elements.drugTypeName}}</td>
+                              <td>{{ elements.drugFromName}}</td>
+                              <td>{{ elements.drugStrengthName}}</td>
+                              <td>{{ elements.size}}</td>
+                              <td>{{ elements.price}}</td>
+                              <td>
+                                <a  class="btn btn-sm btn-outline-primary m-1" routerLink="pharmacist/editUser" id="btnedit1">
+                                  <i aria-hidden="true" class="fa fa-edit float-left" style="font-size:22px;"></i>
+                                  Edit
+                                </a>
+                              </td>
+                            </tr>
+
+
+
+                          </tbody>
+                        </table>
+                    </div>
+            </td>
+
+            <td>
+              <a  style="color: aliceblue;" class="btn btn-sm btn-outline-primary m-1" routerLink="/pharmacit/editProduct/{{product.id}}" id="btnedit">
+                <i aria-hidden="true" class="fa fa-edit float-left" style="font-size:22px;"></i>
+                Edit
+              </a>
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+      <button  (click)="backPgae()"[disabled]="!visible">Previous</button>
+      <button  (click)="nextPage()" [disabled]="!disp">Next</button>
+
+    </div>
+  -->

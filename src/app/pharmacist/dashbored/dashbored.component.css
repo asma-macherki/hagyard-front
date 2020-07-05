@@ -1,6 +1,58 @@
-.styleImage{
-  width: 700px;
-  height: 400px;
-  margin-top: 20px;
-  margin-left: 300px;
+
+.sidnavContent{
+  position:absolute;
+  top: 0;
+  left: -300;
+  display:none;
+  width:300px;
+}
+.content{
+  margin-left: 19%;
+}
+
+/*.mainContent{
+  position: relative;
+  width: 100%;
+  margin-left: 0;
+}*/
+
+.footerContent{
+  min-height: (100vh-225px);
+  margin-left: 15%;
+  bottom:0;
+ /* width:100%;*/
+  height:40px;
+
+}
+
+.sideNavControl {
+  position: absolute;
+  top: -20px;
+  width: 100px;
+  height: 100px;
+  z-index: 999;
+
+}
+
+#style{
+  width: 40px;
+  height: 40px;
+}
+
+
+
+.sidnavContent.show {
+  display: block;
+  left:0;
+  width:300px;
+}
+
+/*.mainContent.sideNavOpen {
+
+  width: calc(100% - 230px);
+  height: calc(100%-400px);
+}*/
+
+.content,.footerContent{
+  padding-bottom: 100px;
 }
