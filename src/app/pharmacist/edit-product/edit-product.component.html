@@ -1,0 +1,107 @@
+<div class="editProductContent" style="transition: opacity 500ms ease-in-out 0s; opacity: 1;">
+
+  <div class="Settings-EditableSection" style="min-height: calc(100vh - 306px); padding-top: 38px;
+  padding-left: 5%;
+  padding-right: 6%;">
+  <div  class="row">
+    <div  class="col-md-12">
+        <a  class="btn-block" routerLink="">
+            <i  aria-hidden="true" class="fa fa-arrow-left"></i> Dashboard
+        </a>
+        <a  class="btn-block" routerLink="/pharmacist/Products">
+          <i  aria-hidden="true" class="fa fa-arrow-left"></i> Back to manage products
+      </a>
+
+    </div>
+  </div>
+
+
+  <div>
+
+
+  <div  class="row pull-right">
+    <div>
+      <button routerLink="/pharmacit/addElmenetPrescription/drug/{{product.id}}" class="btn btn-sm btn-info btn-block text-center"id="addbtn1">
+        <i aria-hidden="true" class="fa fa-plus-square "></i>
+        Add Elmenent Prescription
+      </button>
+    </div>
+    <div class="row pull-right" style="padding-left:30px ;">
+      <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "ball-atom" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+      <button (click)="deletProduct(product.id)" type="button" class="btn btn-danger" id="removebtn">
+        <i class="fa fa-times" aria-hidden="true"style="font-size:20px"></i>Remove</button>
+    </div>
+</div>
+<br>
+<br>
+<div class="row">
+  <div  class="col-md-2"></div>
+  <div  class="col-md-12">
+    <h2 >Edit Product</h2>
+
+</div>
+</div>
+
+
+
+
+<form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+<div  class="row" >
+  <div  class="form-group col-lg-5 col-md-5">
+    <div >
+      <label  class="control-label">Product Name
+        <span  style="color: tomato;">*</span>
+      </label>
+      <input type="text" class="form-control" formControlName="drugName"
+      [ngClass]="{'is-invalid':submitted && (f.drugName.errors || (errors && errors.drugName))}"
+       [(ngModel)]="product.drugName" value='{{product.drugName}}'>
+       <div *ngIf="submitted && f.drugName.errors" class="invalid-feedback">
+        <div *ngIf ="f.drugName.errors.required">
+          Drug name is required
+        </div>
+     </div>
+
+     <div *ngIf="errors && errors.drugName" class="invalid-feedback">
+      <div *ngFor="let errorMessage of errors.drugName" >
+       {{errorMessage}}
+     </div>
+   </div>
+
+    </div>
+    <br >
+
+    <div >
+      <label  class="control-label">Trade Name
+        <span  style="color: tomato;">*</span>
+      </label>
+      <input type="text" class="form-control" formControlName="drugTradeName"
+      [ngClass]="{'is-invalid':submitted && (f.drugTradeName.errors||(errors && errors.drugTradeName))}"
+      [(ngModel)]="product.drugTradeName"  value='{{product.drugTradeName}}'>
+      <div *ngIf="submitted && f.drugTradeName.errors" class="invalid-feedback">
+        <div *ngIf ="f.drugTradeName.errors.required">
+          Drug name is required
+        </div>
+     </div>
+     <div *ngIf="errors && errors.drugTradeName" class="invalid-feedback">
+      <div *ngFor="let errorMessage of errors.drugTradeName" >
+       {{errorMessage}}
+     </div>
+   </div>
+    </div>
+    <br>
+    <br>
+    <div  class="d-flex flex-wrap" >
+      <button  class="btn btn-sm btn-success m-1" style="font-size:15px;width: 140px; height: 40px;" >
+        <i class="fa fa-floppy-o" aria-hidden="true" style="font-size: 20px;"></i>
+        Save</button>
+
+      <button routerLink="//pharmacist/Products" class="btn btn-sm btn-default btn-lg m-1"  type="button"style="background-color: lightgray;width: 140px; height: 40px;">
+        <i  aria-hidden="true" class="fa fa-ban  " style="font-size:20px;"></i>
+        Cancel
+      </button>
+  </div>
+</div>
+
+</div>
+</form>
+</div>

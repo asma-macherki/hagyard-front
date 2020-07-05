@@ -24,18 +24,24 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css",
               "src/assets/css/bootstrap.css",
               "src/assets/css/font-awesome.min.css",
               "src/assets/css/styles.css",
               "src/assets/css/swiper.css",
-              "src/assets/css/magnific-popup.css"
-            ],
+              "src/assets/css/magnific-popup.css",
+              "node_modules/angular-notifier/styles/core.css",
+              "node_modules/angular-notifier/styles/themes/theme-material.css"
+
+                   ],
             "scripts": [
-              "src/assets/js/bootstrap.min.js",
+
+            "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "src/assets/js/jquery.easing.min.js",
+             "node_modules/jquery/dist/jquery.min.js",
               "src/assets/js/jquery.magnific-popup.js",
-              "src/assets/js/jquery.min.js",
+
               "src/assets/js/scripts.js",
               "src/assets/js/swiper.min.js",
               "src/assets/js/validator.min.js"
@@ -106,7 +112,8 @@
               "src/assets/css/font-awesome.min.css",
               "src/assets/css/styles.css",
               "src/assets/css/swiper.css",
-              "src/assets/css/magnific-popup.css"
+              "src/assets/css/magnific-popup.css",
+
             ],
             "scripts": [
               "src/assets/js/bootstrap.min.js",

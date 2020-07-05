@@ -1,0 +1,29 @@
+
+.btn-block{
+
+  display: block;
+  text-align: left;
+}
+a{
+  color: #123C69;
+  background-color: transparent;
+  text-decoration: none;
+
+
+}
+
+h3{
+  font-family: Quicksand, sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 1.75rem;
+    color: #123C69;
+    background-color: transparent;
+    text-decoration: none;
+    text-align: left;
+}
+
+.row{
+  margin-top: 10px;
+}
+
+

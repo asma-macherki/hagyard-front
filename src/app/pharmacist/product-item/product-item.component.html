@@ -1,0 +1,37 @@
+
+  <td>{{product.drugName}}</td>
+  <td>{{product.drugTradeName}}</td>
+  <td>
+          <img src="assets/images/down-arrow.png"  (click)="open(product.id)" [hidden]="show">
+          <div table="elementPrescription" style="padding-top: 5px;padding-left: 100px;margin-top: 30px;">
+            <table class="table" [hidden]="!show">
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Form</th>
+                  <th>Strength</th>
+                  <th>Size</th>
+                  <th>Price</th>
+                  <th>Actions</th>
+                  <th>
+                    <button type="button" class="close" aria-label="Close" (click)="close()">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </th>
+                </tr>
+
+              </thead>
+                <tbody >
+                  <tr app-element-precription-items *ngFor="let element of prescriptions" [element]="element" id="tr_item"></tr>
+                </tbody>
+            </table>
+          </div>
+      </td>
+
+      <td>
+        <button routerLink="/pharmacit/editProduct/{{product.id}}" class="btn btn-sm btn-outline-primary m-1 " role="button" style="width:70px;height: 35px;;font-size:15px;" id="btnedit">
+            <i  aria-hidden="true" class="fa fa-edit float-left" style="font-size:20px; padding-top: 3px; "></i>
+            Edit
+        </button>
+      </td>
+

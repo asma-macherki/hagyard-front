@@ -1,0 +1,27 @@
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+.nav-bar-content{
+
+  background-color:rgb(148, 25, 3);
+  height: 30px;
+
+
+}
+
+
+
+
+.hm-gradient {
+    background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+}
+.darken-grey-text {
+    color: #01094E;
+}
+
+.navbar .dropdown-menu a:hover {
+    color: #01094E !important;
+}
+.darken-grey-text {
+    color: #01094E;
+}
+

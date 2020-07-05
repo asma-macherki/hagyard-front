@@ -1,0 +1,98 @@
+<div  style="transition: opacity 500ms ease-in-out 0s; opacity: 1;">
+
+  <div  style="min-height: calc(100vh - 306px); padding-top: 38px;
+  padding-left: 5%;
+  padding-right: 6%;">
+      <div  class="row">
+          <div  class="col-md-12">
+              <a  class="btn-block" href="/pharmacy/dashboard">
+                  <i  aria-hidden="true" class="fa fa-arrow-left"></i> Dashboard
+              </a>
+              <h3 >
+                  Manage Products
+              </h3>
+          </div>
+      </div>
+      <div _ class="row">
+          <div  class="col-md-12">
+              <div  class="row">
+                  <div  class="col-md-3">
+                      <div  class="form-group" style="text-align: left;">
+                          <label for="exampleSelect1">Search By </label>
+                          <select #searchSelect class="form-control form-control-sm ng-pristine ng-valid ng-touched"(change)="change($event.target.value)">
+                              <option value=0>Search by</option>
+                              <option  value=1>Product Name
+                              </option><option  value=2>Trade Name
+                              </option>
+                          </select>
+                      </div>
+                  </div>
+
+
+                  <div  class="col-md-3">
+                      <div  class="form-group"  style="text-align: left;">
+                          <label >Search</label>
+                          <input #searchInput  [(ngModel)]='form.searchQuery' class="form-control form-control-sm ng-untouched ng-pristine ng-valid" id="searchInput" placeholder="{{newPlacehold}}" type="text">
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div  class="form-group">
+                          <label ></label>
+                          <div  class="row">
+                              <div  class="col-lg-4 mt-md-1 mt-lg-2">
+                                  <button  class="btn btn-sm btn-success btn-block text-center"(click)='find()' id="searchbtn" type="button" >
+                                    <i aria-hidden="true" class="fa fa-search"></i>
+                                      Find a Product
+                                  </button>
+                              </div>
+                              <div  class="col-lg-4 mt-md-1 mt-lg-2">
+                                  <button  class="btn btn-sm btn-default btn-block text-center" style="background-color: lightgray;" type="button" (click)="exit()" >
+                                    <i  aria-hidden="true" class="fa fa-ban" ></i>
+                                      Cancel</button>
+
+                              </div>
+                              <div  class="col-lg-4 mt-md-1 mt-lg-2">
+                                  <button  routerLink="/pharmacits/addProduct" class="btn btn-sm btn-info btn-block text-center" type="button" style="background-color:#4056A1;">
+                                    <i aria-hidden="true" class="fa fa-plus-square"></i>
+                                      Add Product
+                                  </button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+
+                  <table class="table" >
+                    <thead>
+                      <tr>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Trade Name</th>
+                        <th scope="col"></th>
+                        <th scope="col" style="width:12% ;">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let product of products" app-product-item [product]="product" id="tr_item"></tr>
+                    </tbody>
+                  </table>
+              </div>
+              <hr style="margin-top: -20px;">
+
+           <ul class="pagination d-flex justify-content-center" style="margin-top: 50px;">
+
+            <li  class='page-item' >
+              <button   (click)="backPage()" [disabled]="!visible" style="height: 33px; width: 33px;"> « </button>
+            </li>
+            <li  class='page-item'*ngFor='let page of numberPage; let i = index' ><button class="page-link" [ngStyle]="{'background-color':currentPage=== i+1 ? '#007bff' : 'white' }" style="height: 35px; width: 35px;">{{i+1}}</button>
+            </li>
+          <li  class='page-item'>
+            <button  (click)="nextPage()" [disabled]="!disp">  » </button>
+          </li>
+
+          </ul>
+
+    </div>
+  </div>
+
+  </div>
+</div>

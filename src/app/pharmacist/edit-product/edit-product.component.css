@@ -1,0 +1,37 @@
+
+.btn-block{
+  display: block;
+  text-align: left;
+}
+a{
+  color: #123C69;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+h2{
+  font-family: Quicksand,sans-serif!important;
+  font-weight: 700!important;
+  text-align: left;
+  color: #123C69;
+}
+label{
+  text-align: left;
+  color: #123C69;
+}
+
+
+.row{
+  text-align: left;
+}
+
+
+#addbtn1{
+  background-color:#4056A1;
+  height: 40px;
+  font-size: 15px;
+}
+
+#removebtn{
+  height: 40px;
+}

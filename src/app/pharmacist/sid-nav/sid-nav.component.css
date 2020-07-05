@@ -1,0 +1,86 @@
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+
+  width: 200px;
+
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(148, 25, 3);
+  overflow-x: hidden;
+  transition: 0.5;
+  padding-top: 37px;
+
+}
+
+.sidenav a {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #123C69;
+  display: block;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+
+.sidenav a:hover {
+  color: #F4F4F4;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  font-size: 36px;
+  color: rgb(148, 25, 3);
+
+}
+.sidenav .closebtn:hover{
+  color: #123C69;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.contentLogo{
+  height: 14px;
+  background-color: rgb(148, 25, 3);
+}
+
+
+.styleLogo{
+  width:140px;
+ margin-top: -40px;
+ margin-left: 30px;
+ height: 50px;
+
+}
+
+.styleIcon{
+  widows: 50px;
+  height: 30px;
+
+}
+
+
+.menu {
+
+  background-color: #F4F4F4;
+  height: 100vh;
+  margin-top: 5px;
+}
+
+
+hr{
+  align-items: center;
+  width:200px;
+}

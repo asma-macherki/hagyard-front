@@ -1,0 +1,198 @@
+<div class="addElementPrescritpionContent" style="transition: opacity 500ms ease-in-out 0s; opacity: 1;">
+
+  <div class="Settings-EditableSection"  style="min-height: calc(100vh - 306px); padding-top: 38px;
+  padding-left: 5%;
+  padding-right: 6%;
+  ">
+
+  <div  class="row">
+    <div  class="col-md-12">
+        <a  class="btn-block" routerLink="">
+            <i  aria-hidden="true" class="fa fa-arrow-left"></i> Dashboard
+        </a>
+
+        <a  class="btn-block" routerLink="/pharmacist/Products">
+          <i  aria-hidden="true" class="fa fa-arrow-left"></i> Back to manage products
+      </a>
+    </div>
+
+</div>
+<br>
+<br>
+
+<div class="row">
+  <div  class="col-md-12">
+    <h2 >Edit Element Prescription</h2>
+    <div class="pull-right col-lg-6"style="margin-top:-35px;">
+      <button (click)="deletElement(element.gpCode)"type="button" class="btn btn-danger" id="removebtn"style="font-size:15px;width: 140px; height: 40px;">
+        <i class="fa fa-times" aria-hidden="true"style="font-size:20px"></i>
+        Remove</button>
+    </div>
+</div>
+</div>
+
+<br>
+<br>
+<br>
+  <div class="row">
+    <div  class="col-md-11">
+      <div  class="table-responsive">
+        <div [hidden]="!error" class="alert alert-danger">{{error}}</div>
+        <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+        <table  class="table">
+          <thead >
+            <tr>
+              <th  scope="col" style="width: 12%;">Type<span _ngcontent-c13="" style="color: tomato;">*</span></th>
+              <th  scope="col" style="width: 12%;">Form<span  style="color: tomato;">*</span></th>
+
+              <th scope="col">
+                Strength<span  style="color: tomato;">*</span>
+              </th>
+              <th scope="col">Size<span  style="color: tomato;">*</span></th>
+              <th  scope="col">
+                Price<span style="color: tomato;">*</span>
+              </th>
+
+            </tr>
+          </thead>
+
+          <tbody >
+            <tr>
+
+
+              <td  scope="row">
+                <div  class="form-group">
+                  <select value={{element.drugTypeName}} formControlName="drugType" [ngClass]="{'is-invalid':submitted && (f.drugType.errors || (errors && errors.drugType))}"
+                    style="width: 150px;" class="form-control form-control-sm"  name="type" onchange="this.title=this.value;"
+                    [(ngModel)]="element.drug_type_id">
+                    <option  value="2">Compound</option>
+                    <option  value="1">OTC</option>
+                    <option  value="3">Rx</option>
+                  </select>
+                  <div *ngIf="submitted && f.drugType.errors" class="invalid-feedback">
+                    <div *ngIf ="f.drugType.errors.required">
+                      Drug type is required
+                    </div>
+                 </div>
+                <div *ngIf="errors && errors.drugType" class="invalid-feedback">
+                 <div *ngFor="let errorMessage of errors.drugType" >
+                  {{errorMessage}}
+                </div>
+              </div>
+                </div>
+
+              </td>
+
+              <td  scope="row" >
+                <div  class="form-group">
+                  <select  value="{{element.drugFromName}}"[(ngModel)]="element. drug_form_id" [ngClass]="{'is-invalid':submitted && (f.drugForm.errors || (errors && errors.drugForm))}"formControlName="drugForm"  style="width: 150px;" class="form-control form-control-sm"  onchange="this.title=this.value;" >
+                    <option value="1">
+                      LINIMENT
+                    </option>
+                    <option  value="2">
+                      LIQUID
+                    </option>
+                    <option  value="3">
+                      PAD
+                    </option>
+                  </select>
+                  <div *ngIf="submitted && f.drugForm.errors" class="invalid-feedback">
+                    <div *ngIf ="f.drugForm.errors.required">
+                      Drug Form is required
+                    </div>
+                 </div>
+
+                <div *ngIf="errors && errors.drugForm" class="invalid-feedback">
+                 <div *ngFor="let errorMessage of errors.drugForm" >
+                  {{errorMessage}}
+                </div>
+              </div>
+                </div>
+
+              </td>
+
+              <td>
+                  <div class="form-group">
+                    <select value="drugStrengthName" [(ngModel)]="element. drug_strength_id" [ngClass]="{'is-invalid':submitted && (f.drugStrength.errors || (errors && errors.drugStrength))}" formControlName="drugStrength" style="width: 150px;"class="form-control form-control-sm" id="sel1" name="type" onchange="this.title=this.value;" required="" title="Compound">
+                      <option  value="1">2 GM/SCOOP</option>
+                      <option  value="2" >30%</option>
+                      <option value="3" >5%</option>
+                      <option  value="4">25 MG/ML</option>
+                    </select>
+                    <div *ngIf="submitted && f.drugStrength.errors" class="invalid-feedback">
+                      <div *ngIf ="f.drugStrength.errors.required">
+                        Drug Strength is required
+                      </div>
+                   </div>
+
+                  <div *ngIf="errors && errors.drugStrength" class="invalid-feedback">
+                   <div *ngFor="let errorMessage of errors.drugStrength" >
+                    {{errorMessage}}
+                  </div>
+                </div>
+                  </div>
+              </td>
+              <td>
+                <div class="form-group" >
+                  <select value="{{element.size}}" [(ngModel)]="element.size" [ngClass]="{'is-invalid':submitted && (f.size.errors || (errors && errors.size))}"formControlName="size" style="width: 150px;" class="form-control form-control-sm"  >
+
+                    <option  value="OTC" id="1">EACH</option>
+                    <option  value="Rx" id="2">1 GALLON</option>
+                    <option  value="Rx" id="2">PER ML</option>
+                  </select>
+                  <div *ngIf="errors && errors.size" class="invalid-feedback">
+                    <div *ngFor="let errorMessage of errors.size" >
+                     {{errorMessage}}
+                   </div>
+                 </div>
+
+
+                </div>
+              </td>
+              <td>
+                <div class="form-group" style="width: 150px;" >
+                <input value="{{element.price}}"[(ngModel)]="element.price" type="text" formControlName="price" class="form-control form-control-sm"
+                [ngClass]="{'is-invalid':submitted && (f.price.errors || (errors && errors.price))}">
+
+              <div *ngIf="errors && errors.price" class="invalid-feedback">
+               <div *ngFor="let errorMessage of errors.price" >
+                {{errorMessage}}
+              </div>
+            </div>
+                </div>
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+
+  <div  class="  Btns pull-right  col-lg-6"  >
+    <div  class="d-flex flex-wrap" >
+
+        <button  class="btn btn-sm btn-success m-1" style="font-size:15px; width: 140px; height: 40px;" >
+          <i class="fa fa-floppy-o" aria-hidden="true" style="font-size: 20px;"></i>
+          Save</button>
+
+        <a routerLink="/pharmacit/editProduct">
+        <button  class="btn btn-sm btn-default btn-lg m-1" style=" font-size:18px;background-color: lightgray; width: 140px; height: 40px;">
+          <i  aria-hidden="true" class="fa fa-ban " style="font-size:20px;"></i>
+          Cancel
+        </button>
+        </a>
+    </div>
+</div>
+      </form>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+</div>
+
+
+
